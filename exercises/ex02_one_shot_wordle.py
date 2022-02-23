@@ -24,15 +24,15 @@ while x < len(secret_word):
     if guess_word[x] == secret_word[x]:
         result = result + GREEN_BOX
     else:
-# checking other indices for correct letters at incorrect positions
+        # checking other indices for correct letters at incorrect positions
         existence: bool = False
         indices: int = 0
-        while existence != True and indices < len(secret_word):
+        while existence is not True and indices < len(secret_word):
             if guess_word[x] == secret_word[indices]:
                 existence = True
             else:
                 indices += 1
-        if existence == True:
+        if existence is True:
             result += YELLOW_BOX
         else:
             result += WHITE_BOX

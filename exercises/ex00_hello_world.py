@@ -5,3 +5,4 @@ __author__ = "730490913"
 
 print("Hello, new world.")
 
+print(68)
