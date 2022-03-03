@@ -3,8 +3,8 @@
 __author__ = "730490913"
 
 
-def only_evens(xs: list[int]) -> list:
-    """Return a list containing only the element of the input list that were even. """
+def only_evens(xs: list[int]) -> list[int]:
+    """Return a list containing only the element of the input list that were even."""
     even_list: list[int] = list()
     for x in xs:
         if x % 2 == 0:
@@ -12,7 +12,7 @@ def only_evens(xs: list[int]) -> list:
     return even_list
 
 
-def sub(xs: list[int], start: int, end: int) -> list:
+def sub(xs: list[int], start: int, end: int) -> list[int]:
     """Return a list which is a subset of the given list, between the specified start index and end index - 1."""
     rolls: list[int] = list()
     x = int(start)
@@ -23,15 +23,15 @@ def sub(xs: list[int], start: int, end: int) -> list:
         y = len(xs)
     if len(xs) == 0 or x > len(xs) or y <= 0:
         return rolls
-    i = int(0) 
+    i: int = 0 
     for xss in xs:
-        if i == x or i < y:
-            rolls.append(xs[i])
-        if i >= y:
-            return rolls
+        if i >= x and i < y:
+            rolls.append(xss)
+        i += 1
+    return rolls
 
     
-def concat(a: list[int], b: list[int]) -> list:
+def concat(a: list[int], b: list[int]) -> list[int]:
     """Generating a new list which contains all of the elements of the first list followed by all of the second list."""
     c: list[int] = list()
     for aa in a:
