@@ -3,13 +3,13 @@
 __author__ = "730490913"
 
 
-def invert(xs: dict[str, str]) -> dict[str, str]:
+def invert(iv_dict: dict[str, str]) -> dict[str, str]:
     """Invert the keys and the values."""
     result: dict[str, str] = dict()
-    for key in xs:
-        if xs[key] in result:
+    for key in iv_dict:
+        if iv_dict[key] in result:
             raise KeyError("error message of your choice here!")
-        result[xs[key]] = key
+        result[iv_dict[key]] = key
     return result
 
 
@@ -30,10 +30,10 @@ def favorite_color(color: dict[str, str]) -> str:
     return result
 
 
-def count(a: list[str]) -> dict[str, int]:
+def count(orig_dict: list[str]) -> dict[str, int]:
     """Count the number of times that value appeared in the input list."""
     empty: dict[str, int] = {}
-    for item in a:
+    for item in orig_dict:
         if item in empty:
             empty[item] += 1
         else:
